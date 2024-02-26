@@ -14,6 +14,7 @@
 #include <string>
 #include <string.h>
 //#include <dnlKernel.h>
+#include "Errors.h"
 
 // Interface methods excluded from SWIG
 #ifndef SWIG

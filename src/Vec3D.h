@@ -13,9 +13,7 @@
 
 #include <string>
 #include <string.h>
-//#include <dnlKernel.h>
-#include <cmath> //sqrt
-#include "Macros.h"
+#include <dnlKernel.h>
 
 class Tensor2;
 class SymTensor2;
@@ -100,7 +98,10 @@ public:
   Vec3D operator+(const Vec3D &) const;
   Vec3D vectorProduct(const Vec3D &) const;
   void normalize();
-
+  void numpyRead(std::string);
+  void numpyReadZ(std::string, std::string);
+  void numpyWrite(std::string, bool = false) const;
+  void numpyWriteZ(std::string, std::string, bool = false) const;
   void setNegativeValuesToZero();
   void setValue(double = 0);
   void setValue(double, double, double);
@@ -118,7 +119,7 @@ inline bool Vec3D::indexOK(int i) const
     return (true);
 
   // here, we detected an error in the index
-  //fatalError("Vec3D::indexOK", "indice %d out of allowed range [0:3]", i);
+  fatalError("Vec3D::indexOK", "indice %d out of allowed range [0:3]", i);
 
   // stupid, because we'll never pass here because of the fatalError but it's to avoid a remark from the compiler
   return (false);
@@ -377,7 +378,7 @@ inline void Vec3D::operator/=(const double lambda)
 {
   if (lambda == 0.0)
   {
-//    fatalError("Vec3D:: operator /=", "divide by zero");
+    fatalError("Vec3D:: operator /=", "divide by zero");
   }
   _data[0] /= lambda;
   _data[1] /= lambda;

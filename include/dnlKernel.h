@@ -23,15 +23,15 @@
 
 #include <Defines.h>
 #include <Errors.h>
-#include <Exception.h>
-#include <Field.h>
-#include <List.h>
-#include <LogFile.h>
+// #include <Exception.h>
+// #include <Field.h>
+// #include <List.h>
+// #include <LogFile.h>
 //#include <MacAddress.h>
 #include <Macros.h>
-#include <Settings.h>
+//#include <Settings.h>
 #include <String.h>
 //#include <System.h>
-#include <Timer.h>
+//#include <Timer.h>
 
 #endif
